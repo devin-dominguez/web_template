@@ -1,8 +1,7 @@
 var gulp = require('gulp');
-var sass = require('gulp-sass');
-var minifyCSS = require('gulp-csso');
-var sourcemaps = require("gulp-sourcemaps");
+
 var babel = require("gulp-babel");
+var sourcemaps = require("gulp-sourcemaps");
 var concat = require("gulp-concat");
 
 gulp.task('js', function () {
@@ -14,6 +13,9 @@ gulp.task('js', function () {
     .pipe(gulp.dest("dist/js"));
 });
 
+var sass = require('gulp-sass');
+var minifyCSS = require('gulp-csso');
+
 gulp.task('css', function(){
   return gulp.src('src/style.scss')
     .pipe(sass())
@@ -22,6 +24,7 @@ gulp.task('css', function(){
 });
 
 gulp.task('default', [ 'js', 'css' ]);
+
 gulp.task('watch', function () {
   gulp.watch("src/**/*.js", ['js']);
   gulp.watch('src/**/*.scss', ['css']);

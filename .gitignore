@@ -1,5 +1,4 @@
 node_modules/
 bundle.js
 style.css
-index.html
 *.js.map
